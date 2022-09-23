@@ -14,4 +14,9 @@ public class QuiteExecutionListener<T, R> implements ExecutionListener<T, R> {
 
 	}
 
+    @Override
+    public void onStart(Task<T, R> task) {
+
+    }
+
 }

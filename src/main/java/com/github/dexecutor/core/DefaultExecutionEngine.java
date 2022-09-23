@@ -129,6 +129,7 @@ public final class DefaultExecutionEngine<T, R> implements ExecutionEngine<T, R>
 				ExecutionResult<T, R> result = null;
 				try {
 					task.markStart();
+                                        executionListener.onStart(task);
 					r = task.execute();
 					result = ExecutionResult.success(task.getId(), r);
 					state.removeErrored(result);

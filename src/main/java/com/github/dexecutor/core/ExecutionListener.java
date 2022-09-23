@@ -22,4 +22,10 @@ public interface ExecutionListener<T, R> {
 	 * @param exception the exception caught
 	 */
 	void onError(Task<T, R> task, Exception exception);
+        /**
+	 * Called on start node execution
+	 * 
+	 * @param task the starting one
+	 */
+	void onStart(Task<T, R> task);
 }
