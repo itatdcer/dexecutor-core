@@ -63,6 +63,11 @@ public class DexecutorListenerTest {
 				public void onError(Task<Integer, Integer> task, Exception exception) {
 					logger.info("onError : {}", task);			
 				}
+                                
+                                @Override
+				public void onStart(Task<Integer, Integer> task) {
+					logger.info("onStart : {}", task);			
+				}
 			});
 
 			DefaultDexecutor<Integer, Integer> executor = new DefaultDexecutor<Integer, Integer>(config);
