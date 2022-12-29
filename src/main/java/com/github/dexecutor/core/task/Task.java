@@ -119,6 +119,13 @@ public abstract class Task<T, R> implements Serializable {
 	 * @return the result of task execution
 	 */
 	public abstract R execute();
+        
+        /**
+         * Method to cancel a pending / running task. It's up to the execute implementation to care (or not) for this cancel "signal". Default behavior is NOP.
+         */
+        public void cancel() {
+        }
+        
 	/**
 	 * When using retry behavior, execution error should not be considered until the last retry, this would define when execution error should be considered
 	 */
